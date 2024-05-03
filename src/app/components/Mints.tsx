@@ -9,19 +9,21 @@ export default function Mints(){
   console.log(mints)
 
   return (
-    <div>
+    <div className="columns-3">
       {
         mints?.map((mint) => (
-          <div key={mint.id}>
-            <div>{mint.tokenAndContract.metadata?.name}</div>
-            <Image 
-              src={`https://magic.decentralized-content.com/ipfs/${mint.tokenAndContract.metadata?.image.substring(7)}`}
-               alt={mint.id} 
-               width={50}
-               height={50}
-               className=" w-50"
-               
-               />
+          <div className="mb-2" key={mint.id}>
+            {/*<div className="w-48">{mint.tokenAndContract.metadata?.name}</div> */}           
+            <div className="">
+              <Image
+                src={`https://magic.decentralized-content.com/ipfs/${mint.tokenAndContract.metadata?.image.substring(7)}?w=150`}
+                alt={mint.id}
+                width={150}
+                height={150}
+                className=" w-50"
+              />
+            </div>
+
           </div>
         ))
       }
